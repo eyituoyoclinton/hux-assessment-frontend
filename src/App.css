@@ -1,0 +1,298 @@
+.App {
+   text-align: center;
+}
+
+.App-logo {
+   height: 40vmin;
+   pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+   .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+   }
+}
+
+.App-header {
+   background-color: #282c34;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   font-size: calc(10px + 2vmin);
+   color: white;
+}
+
+.App-link {
+   color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+   from {
+      transform: rotate(0deg);
+   }
+
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.doubleBtn {
+   display: flex;
+
+}
+
+.mr5 {
+   margin-right: 5px;
+}
+
+.centerFlex {
+   align-items: center;
+   display: flex;
+   justify-content: center;
+}
+
+.sectionPad {
+   padding: 20px;
+}
+
+.sectionOne {
+   background-position-x: center;
+   background-position-y: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   overflow: hidden;
+}
+
+.newBg {
+   background: #252B42 !important;
+   padding: 60px;
+}
+
+.bg-black {
+   background: #000 !important;
+}
+
+.headerText {
+   font-size: 30px;
+   font-style: normal;
+   font-weight: 700;
+   letter-spacing: 0.2px;
+}
+
+.headerText .sub-headerText {
+   color: #c79365;
+   font-size: 1.5rem;
+}
+
+.headerPText {
+   font-size: 22px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 28px;
+   /* 127.273% */
+   letter-spacing: 0.088px;
+}
+
+.showcasePtext {
+   font-family: "Work Sans";
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: 28px;
+   letter-spacing: 0.088px;
+}
+
+.createBtn,
+.getLogin {
+   color: #FFF !important;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 20px;
+   border-radius: 5px;
+   border: 1px solid#45B4A7;
+   background-color: #45B4A7;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8px;
+   padding: 10px;
+   width: 60%;
+}
+
+.getLogin {
+   background: transparent;
+   color: var(--secondary-color) !important;
+}
+
+.pLO {
+   padding-left: 0;
+   padding-right: 0;
+}
+
+.cursor-pointer {
+   cursor: pointer;
+}
+
+.popupClass {
+   text-align: center;
+}
+
+.popupText {
+   max-width: 70%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.popColor1 {
+   background-color: #45B4A7;
+}
+
+.popColor2 {
+   background-color: #E8EFFF;
+}
+
+.text-pop {
+   color: #45B4A7;
+}
+
+.max400 {
+   min-width: 400px;
+}
+
+.max900 {
+   min-width: 900px;
+}
+
+.max700 {
+   min-width: 700px;
+}
+
+.max600 {
+   min-width: 600px;
+}
+
+.dropdownMainNew {
+   padding: 20px;
+   border-radius: 16px;
+   box-shadow: 2px 1px 2px 1px #eee;
+}
+
+
+
+
+.containerForm {
+   display: grid;
+}
+
+.containerForm input {
+   width: 100%;
+   border-radius: 12px;
+   padding: 10px 10px 10px 20px;
+   background-color: #fff;
+   border: 1px solid #45B4A7;
+   padding-left: 45px;
+}
+
+.containerForm input:focus {
+   border: 1px solid #45B4A7;
+}
+
+
+.containerForm img {
+   position: absolute;
+   margin-top: 10px;
+   margin-left: 10px;
+   width: 24px;
+   height: 24px;
+}
+
+.loginBtn {
+   padding: 12px 20px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 24px;
+   background: #45B4A7;
+   border: none;
+}
+
+.sidebar {
+   background-color: #FAFAFA;
+   /* height: 100vh; */
+   height: 100%;
+   padding-top: 100px;
+   padding-left: 30px;
+   padding-right: 30px;
+   position: fixed;
+}
+
+.sidebar ul li {
+   /* display: flex; */
+   list-style: none;
+   width: 100%;
+   padding: 10px 20px;
+}
+
+
+.sidebar ul li a {
+   display: flex;
+   text-decoration: none;
+   font-size: 16px;
+   color: #000;
+   font-weight: 500;
+   font-family: 'Work Sans', sans-serif;
+}
+
+.sidebar ul li:hover {
+   /* background-color: #CDF463; */
+   background-color: #45B4A7;
+   border-radius: 10px;
+}
+
+.sidebar ul li a span {
+   margin-right: 14px;
+}
+
+.myTable {
+   background-color: #fff;
+   border-radius: 10px;
+   /* padding: 5px 0; */
+   position: relative;
+}
+
+.myTable14 {
+   /* min-height: 500px; */
+   white-space: nowrap;
+   overflow-x: scroll;
+}
+
+.myTable14::-webkit-scrollbar {
+   display: none;
+}
+
+.newContactBtn {
+   right: 0;
+   position: absolute;
+   margin-right: 42px;
+   padding: 10px 20px;
+   border-radius: 10px;
+}
+
+.mtop100 {
+   margin-top: 100px;
+}
+
+.ncol-2 {
+   width: 19.666667% !important;
+}
+
+.ncol-10 {
+   width: 80.333333% !important;
+}
+
+.mr5 {
+   margin-left: 5px;
+}

@@ -6,18 +6,9 @@ import helpers from "../utils/helpers";
 
 export default () => {
   const navigate = useNavigate();
-  const {
-    setAlert,
-    setIsLoading,
-    setUserData,
-    setContactData,
-    setSingleContact,
-  } = useStoreSelector([
+  const { setAlert, setUserData } = useStoreSelector([
     "setAlert",
-    "setIsLoading",
     "setUserData",
-    "setContactData",
-    "setSingleContact",
   ]);
   const login = async (username: string, password: string) => {
     if (!username) {
@@ -49,7 +40,7 @@ export default () => {
       } else if (sendRequest.status_code === 200) {
         setUserData(sendRequest.data.data);
         localStorage.setItem("__mtoken", sendRequest.data.data.token);
-        navigate("/contact");
+        navigate("/app/contact");
       } else {
         return helpers.showErrorMessage(sendRequest);
       }
@@ -121,40 +112,35 @@ export default () => {
     }
     setUserData(sendRequest.data.data);
     localStorage.setItem("__mtoken", sendRequest.data.data.token);
-    navigate("/contact");
+    navigate("/app/contact");
   };
 
   const fetchContactList = async (page = 1) => {
-    setIsLoading(true);
     let sendRequest = await helpers
       .sendRequest({
         url: `${APIendPoint.contact.getcontact}`,
         method: "GET",
       })
       .catch((e) => e);
-    setIsLoading(false);
     if (sendRequest && sendRequest.status_code !== 200) {
       return helpers.showErrorMessage(sendRequest);
     }
 
-    setContactData(sendRequest.data?.data);
+    //  await helpers.takeASleep2(5000);
+    return sendRequest.data?.data;
   };
 
   const fetchSingleContact = async (id: string) => {
-    setIsLoading(true);
-
-    //  console.log(status);
     let sendRequest = await helpers
       .sendRequest({
         url: `${APIendPoint.contact.getcontact}/${id}`,
         method: "GET",
       })
       .catch((e) => e);
-    setIsLoading(false);
     if (sendRequest && sendRequest.status_code !== 200) {
       return helpers.showErrorMessage(sendRequest);
     }
-    setSingleContact(sendRequest.data?.data);
+    return sendRequest.data?.data;
   };
 
   const createContact = async (
@@ -230,7 +216,7 @@ export default () => {
     if (sendRequest && sendRequest.status_code !== 200) {
       return helpers.showErrorMessage(sendRequest);
     }
-    fetchContactList();
+    //  fetchContactList();
     helpers.showToast("success", "Contact was updated successful");
     onPress && onPress();
   };
@@ -247,7 +233,7 @@ export default () => {
     if (sendRequest && sendRequest.status_code !== 200) {
       return helpers.showErrorMessage(sendRequest);
     }
-    fetchContactList();
+    //  fetchContactList();
     helpers.showToast("success", "Contact was deleted successful");
     onPress && onPress();
   };

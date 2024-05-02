@@ -2,10 +2,7 @@ import { useState, useEffect } from "react"
 import AppLayout from "../../components/AppLayout"
 import { ObjectPayload } from "../../typings/general"
 import { NavLink, useParams } from "react-router-dom"
-import { useStoreSelector } from "../../store/useStore"
 import useUserFunction from "../../hooks/useUserFunction"
-import helpers from "../../utils/helpers"
-import AppTable from "../../components/AppTable"
 
 export type DataState = {
    data?: ObjectPayload;
@@ -14,14 +11,18 @@ export type DataState = {
 export default (data: DataState) => {
    const params = useParams();
    const { fetchSingleContact } = useUserFunction()
-   const { singleContact } = useStoreSelector(["singleContact"])
+   const [contactData, setContactData] = useState<any>([])
    useEffect(() => {
-      fetchSingleContact(params?.ID as any)
+      fetchSingleContact(params?.ID as any).then((res: any) => {
+
+         setContactData(res[0])
+      })
    }, [])
-   let useData = singleContact[0]
+   // console.log(contactData)
+   let useData = contactData
 
    return (
-      <AppLayout active="sessions">
+      <AppLayout active="contact">
          <div className="">
             <div className="row mb-4">
                <div className="col-12">

@@ -23,7 +23,7 @@ export default () => {
                         <NavLink className="nav-link" to="#">About us</NavLink>
                      </li>
                      <li className="nav-item">
-                        <NavLink className="nav-link" to="#">Contacts</NavLink>
+                        <NavLink className="nav-link" to="#">Faq</NavLink>
                      </li>
 
                   </ul>

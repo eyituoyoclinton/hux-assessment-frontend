@@ -194,11 +194,8 @@ export default class helpers {
   static toUpperCase(value: string) {
     return value?.charAt(0).toUpperCase() + value.slice(1);
   }
-
-  static formatMoney(value: number | string) {
-    if (!value || Number(value).toString() === "NaN") return value;
-    return String(value).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  //for stopping code execution
+  static takeASleep2(timer: number): Promise<boolean> {
+    return new Promise((resolve) => setTimeout(() => resolve(true), timer));
   }
-
-  static getNairaSign = () => `\u20A6`;
 }

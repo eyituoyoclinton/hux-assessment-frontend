@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Properties as CSSProperties } from 'csstype'
 import { ObjectPayload } from '../typings/general';
 import useUserFunction from '../hooks/useUserFunction';
-const closebtn: string = require('../assets/images/closebtn.svg').default
 
 
 type DropdownItems = {
@@ -42,7 +41,7 @@ export default (props: DataState) => {
                   <div className='popupClass1'>
                      <div className='popupText1 mb-2 d-flex spaceRounded'>
                         <p>Login</p>
-                        <i onClick={() => props.onPress && props.onPress()} style={{ fontSize: '20px', marginLeft: '80%' }} className="fa fa-times m-color-red cursor-pointer cursor-hover" aria-hidden="true">X</i>
+                        <i onClick={() => props.onPress && props.onPress()} style={{ fontSize: '20px', marginLeft: '80%' }} className="fa fa-times m-color-red cursor-pointer cursor-hover" aria-hidden="true"></i>
                      </div>
                      <form method="post">
                         <div className="containerForm">

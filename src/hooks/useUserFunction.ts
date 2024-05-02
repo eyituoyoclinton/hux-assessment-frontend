@@ -92,7 +92,7 @@ export default () => {
     if (!password) {
       return helpers.showToast("error", "password is required");
     }
-    helpers.showToast("loading", "Loading");
+    //  helpers.showToast("loading", "Loading");
     let sendRequest = await helpers
       .sendRequest({
         url: `${APIendPoint.admin.base}/create-account`,
